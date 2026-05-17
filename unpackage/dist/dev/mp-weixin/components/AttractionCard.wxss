@@ -1,0 +1,71 @@
+
+.attraction-card.data-v-58bb8176 {
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #1a365d 0%, #2d4a7c 50%, #1e3a5f 100%);
+  border-radius: 12rpx;
+  padding: 20rpx 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  border: 1rpx solid rgba(212, 175, 55, 0.3);
+}
+.card-header.data-v-58bb8176 {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 16rpx;
+}
+.city-badge.data-v-58bb8176 {
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+  color: #1a365d;
+  padding: 6rpx 20rpx;
+  border-radius: 24rpx;
+  font-size: 22rpx;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.attraction-name.data-v-58bb8176 {
+  color: #ffffff;
+  font-size: 32rpx;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+.card-body.data-v-58bb8176 {
+  position: relative;
+  z-index: 2;
+}
+.description-label.data-v-58bb8176 {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  color: rgba(212, 175, 55, 0.9);
+  font-size: 22rpx;
+  margin-bottom: 12rpx;
+}
+.description-label .icon.data-v-58bb8176 {
+  font-size: 24rpx;
+}
+.description-text.data-v-58bb8176 {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 24rpx;
+  line-height: 1.6;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12rpx 16rpx;
+  border-radius: 8rpx;
+  border-left: 4rpx solid rgba(212, 175, 55, 0.5);
+}
+.card-decoration.data-v-58bb8176 {
+  position: absolute;
+  bottom: 12rpx;
+  right: 20rpx;
+  opacity: 0.85;
+  font-size: 60rpx;
+  z-index: 3;
+}
+.gondola-icon.data-v-58bb8176 {
+  color: #d4af37;
+}

@@ -1,0 +1,38 @@
+{
+  "pages": [
+    {
+      "path": "pages/dashboard/index",
+      "style": {
+        "navigationBarTitleText": "数据大屏",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/chat/index",
+      "style": {
+        "navigationBarTitleText": "景点智能助手"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#1a1a2e",
+    "backgroundColor": "#1a1a2e"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#00E5FF",
+    "backgroundColor": "#1a1a2e",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/dashboard/index",
+        "text": "数据大屏"
+      },
+      {
+        "pagePath": "pages/chat/index",
+        "text": "智能助手"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+<view class="chart-container data-v-e331f234"><view class="chart-title data-v-e331f234">{{a}}</view><l-echart wx:if="{{d}}" class="r data-v-e331f234" u-r="chartRef" bindfinished="{{c}}" u-i="e331f234-0" bind:__l="__l" u-p="{{d}}"/></view>

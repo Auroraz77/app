@@ -1,0 +1,17 @@
+
+.chart-container.data-v-e331f234 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  overflow: hidden;
+}
+.chart-title.data-v-e331f234 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 28rpx;
+  padding: 12rpx 0;
+  font-weight: bold;
+  flex-shrink: 0;
+}

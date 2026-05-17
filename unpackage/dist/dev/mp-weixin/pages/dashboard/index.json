@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "数据大屏",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "echart-bar": "../../components/EchartBar",
+    "echart-pie": "../../components/EchartPie",
+    "echart-map": "../../components/EchartMap",
+    "echart-scatter": "../../components/EchartScatter",
+    "attraction-card": "../../components/AttractionCard"
+  }
+}

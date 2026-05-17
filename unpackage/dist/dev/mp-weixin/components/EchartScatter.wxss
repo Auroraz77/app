@@ -1,0 +1,17 @@
+
+.chart-container.data-v-652c9cfc {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  overflow: hidden;
+}
+.chart-title.data-v-652c9cfc {
+  text-align: center;
+  color: #ffffff;
+  font-size: 28rpx;
+  padding: 12rpx 0;
+  font-weight: bold;
+  flex-shrink: 0;
+}

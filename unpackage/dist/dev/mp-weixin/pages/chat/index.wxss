@@ -1,0 +1,184 @@
+
+.chat-page.data-v-5a559478 {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+}
+
+/* 消息列表 */
+.chat-container.data-v-5a559478 {
+  flex: 1;
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+}
+.message.data-v-5a559478 {
+  margin-bottom: 24rpx;
+  padding: 0 20rpx;
+}
+.user-message.data-v-5a559478 {
+  display: flex;
+  justify-content: flex-end;
+}
+.user-message .content.data-v-5a559478 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  padding: 20rpx 28rpx;
+  border-radius: 28rpx 28rpx 8rpx 28rpx;
+  max-width: 70%;
+  word-wrap: break-word;
+  font-size: 28rpx;
+  text-align: left;
+  margin-right: 16rpx;
+}
+.assistant-message.data-v-5a559478 {
+  text-align: left;
+}
+.assistant-message .content.data-v-5a559478 {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 20rpx 28rpx;
+  border-radius: 28rpx 28rpx 28rpx 8rpx;
+  display: inline-block;
+  max-width: 85%;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  font-size: 28rpx;
+}
+
+/* 数据列表内容 */
+.data-content.data-v-5a559478 {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+  max-width: 90%;
+}
+.data-intro.data-v-5a559478 {
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 8rpx;
+  white-space: pre-wrap;
+}
+.summary-text.data-v-5a559478 {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+/* 景点小卡片 */
+.attraction-card.data-v-5a559478 {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16rpx;
+  padding: 20rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.08);
+}
+.card-header.data-v-5a559478 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8rpx;
+}
+.card-name.data-v-5a559478 {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #00E5FF;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.card-price.data-v-5a559478 {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #FFD700;
+  margin-left: 16rpx;
+}
+.card-meta.data-v-5a559478 {
+  font-size: 22rpx;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 4rpx;
+}
+.card-sales.data-v-5a559478 {
+  font-size: 22rpx;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* 展开/收起 */
+.show-more.data-v-5a559478 {
+  text-align: center;
+  padding: 12rpx 0;
+}
+.show-more text.data-v-5a559478 {
+  font-size: 24rpx;
+  color: #00E5FF;
+  text-decoration: underline;
+}
+
+/* 加载动画 - 三点跳动 */
+.loading-content.data-v-5a559478 {
+  padding: 16rpx 28rpx !important;
+}
+.dot-typing.data-v-5a559478 {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+  height: 32rpx;
+}
+.dot.data-v-5a559478 {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: #00E5FF;
+  animation: dotBounce-5a559478 1.4s infinite ease-in-out both;
+}
+.dot.data-v-5a559478:nth-child(1) { animation-delay: 0s;
+}
+.dot.data-v-5a559478:nth-child(2) { animation-delay: 0.2s;
+}
+.dot.data-v-5a559478:nth-child(3) { animation-delay: 0.4s;
+}
+@keyframes dotBounce-5a559478 {
+0%, 80%, 100% { transform: scale(0.4); opacity: 0.4;
+}
+40% { transform: scale(1); opacity: 1;
+}
+}
+
+/* 输入区域 */
+.input-area.data-v-5a559478 {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 16rpx 20rpx;
+  padding-bottom: calc(16rpx + env(safe-area-inset-bottom));
+  border-top: 1rpx solid rgba(255, 255, 255, 0.1);
+}
+.input-form.data-v-5a559478 {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+.question-input.data-v-5a559478 {
+  flex: 1;
+  padding: 20rpx 28rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.2);
+  border-radius: 40rpx;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 28rpx;
+}
+.input-placeholder.data-v-5a559478 {
+  color: rgba(255, 255, 255, 0.5);
+}
+.submit-btn.data-v-5a559478 {
+  padding: 20rpx 40rpx;
+  background: linear-gradient(135deg, #00E5FF 0%, #0099CC 100%);
+  border-radius: 40rpx;
+  color: #1a1a2e;
+  font-size: 28rpx;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.submit-btn.disabled.data-v-5a559478 {
+  opacity: 0.5;
+}
