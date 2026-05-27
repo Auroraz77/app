@@ -49,13 +49,13 @@ defineProps({
 .attraction-card {
   width: 100%;
   box-sizing: border-box;
-  background: linear-gradient(135deg, #1a365d 0%, #2d4a7c 50%, #1e3a5f 100%);
-  border-radius: 12rpx;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #e1f5fe 100%);
+  border-radius: 16rpx;
   padding: 20rpx 24rpx;
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4rpx 16rpx rgba(25, 118, 210, 0.1);
   position: relative;
   overflow: hidden;
-  border: 1rpx solid rgba(212, 175, 55, 0.3);
+  border: 1rpx solid rgba(25, 118, 210, 0.15);
 }
 
 .card-header {
@@ -66,8 +66,8 @@ defineProps({
 }
 
 .city-badge {
-  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
-  color: #1a365d;
+  background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
+  color: #ffffff;
   padding: 6rpx 20rpx;
   border-radius: 24rpx;
   font-size: 22rpx;
@@ -76,7 +76,7 @@ defineProps({
 }
 
 .attraction-name {
-  color: #ffffff;
+  color: #1a1a1a;
   font-size: 32rpx;
   font-weight: bold;
   white-space: nowrap;
@@ -94,7 +94,7 @@ defineProps({
   display: flex;
   align-items: center;
   gap: 8rpx;
-  color: rgba(212, 175, 55, 0.9);
+  color: #1976d2;
   font-size: 22rpx;
   margin-bottom: 12rpx;
 }
@@ -104,25 +104,25 @@ defineProps({
 }
 
 .description-text {
-  color: rgba(255, 255, 255, 0.95);
+  color: #333333;
   font-size: 24rpx;
   line-height: 1.6;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.7);
   padding: 12rpx 16rpx;
   border-radius: 8rpx;
-  border-left: 4rpx solid rgba(212, 175, 55, 0.5);
+  border-left: 4rpx solid #1976d2;
 }
 
 .card-decoration {
   position: absolute;
   bottom: 12rpx;
   right: 20rpx;
-  opacity: 0.85;
+  opacity: 0.15;
   font-size: 60rpx;
   z-index: 3;
 }
 
 .gondola-icon {
-  color: #d4af37;
+  color: #1976d2;
 }
 </style>

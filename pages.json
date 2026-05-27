@@ -1,6 +1,22 @@
 {
   "pages": [
     {
+      "path": "pages/login/index",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationBarBackgroundColor": "#1976d2",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/register/index",
+      "style": {
+        "navigationBarTitleText": "注册",
+        "navigationBarBackgroundColor": "#1976d2",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
       "path": "pages/dashboard/index",
       "style": {
         "navigationBarTitleText": "数据大屏",
@@ -8,30 +24,55 @@
       }
     },
     {
+      "path": "pages/ticket/index",
+      "style": {
+        "navigationBarTitleText": "景点门票",
+        "navigationBarBackgroundColor": "#1976d2",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
       "path": "pages/chat/index",
       "style": {
-        "navigationBarTitleText": "景点智能助手"
+        "navigationBarTitleText": "景点智能助手",
+        "navigationBarBackgroundColor": "#1976d2",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/profile/index",
+      "style": {
+        "navigationBarTitleText": "行程规划",
+        "navigationStyle": "custom"
       }
     }
   ],
   "globalStyle": {
     "navigationBarTextStyle": "white",
-    "navigationBarBackgroundColor": "#1a1a2e",
-    "backgroundColor": "#1a1a2e"
+    "navigationBarBackgroundColor": "#1976d2",
+    "backgroundColor": "#f5f8fb"
   },
   "tabBar": {
     "color": "#999999",
-    "selectedColor": "#00E5FF",
-    "backgroundColor": "#1a1a2e",
-    "borderStyle": "black",
+    "selectedColor": "#1976d2",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/dashboard/index",
         "text": "数据大屏"
       },
       {
+        "pagePath": "pages/ticket/index",
+        "text": "景点门票"
+      },
+      {
         "pagePath": "pages/chat/index",
         "text": "智能助手"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的"
       }
     ]
   }

@@ -199,13 +199,13 @@ async function sendMessage() {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+  background: linear-gradient(180deg, #e0f2ff 0%, #f5f8fb 100%);
 }
 
 /* 消息列表 */
 .chat-container {
   flex: 1;
-  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+  background: linear-gradient(180deg, #e0f2ff 0%, #f5f8fb 100%);
 }
 
 .message {
@@ -219,7 +219,7 @@ async function sendMessage() {
 }
 
 .user-message .content {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
   color: #ffffff;
   padding: 20rpx 28rpx;
   border-radius: 28rpx 28rpx 8rpx 28rpx;
@@ -235,8 +235,8 @@ async function sendMessage() {
 }
 
 .assistant-message .content {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  background: #ffffff;
+  color: #333333;
   padding: 20rpx 28rpx;
   border-radius: 28rpx 28rpx 28rpx 8rpx;
   display: inline-block;
@@ -244,6 +244,7 @@ async function sendMessage() {
   word-wrap: break-word;
   white-space: pre-wrap;
   font-size: 28rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
 }
 
 /* 数据列表内容 */
@@ -256,7 +257,7 @@ async function sendMessage() {
 
 .data-intro {
   font-size: 26rpx;
-  color: rgba(255, 255, 255, 0.9);
+  color: #333333;
   line-height: 1.6;
   margin-bottom: 8rpx;
   white-space: pre-wrap;
@@ -266,16 +267,16 @@ async function sendMessage() {
   display: block;
   margin-top: 8rpx;
   font-size: 26rpx;
-  color: rgba(255, 255, 255, 0.8);
+  color: #666666;
   line-height: 1.6;
 }
 
 /* 景点小卡片 */
 .attraction-card {
-  background: rgba(255, 255, 255, 0.06);
+  background: #f5f8fb;
   border-radius: 16rpx;
   padding: 20rpx;
-  border: 1rpx solid rgba(255, 255, 255, 0.08);
+  border: 1rpx solid #e3f2fd;
 }
 
 .card-header {
@@ -288,7 +289,7 @@ async function sendMessage() {
 .card-name {
   font-size: 28rpx;
   font-weight: bold;
-  color: #00E5FF;
+  color: #1976d2;
   flex: 1;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -298,19 +299,19 @@ async function sendMessage() {
 .card-price {
   font-size: 28rpx;
   font-weight: bold;
-  color: #FFD700;
+  color: #ff5722;
   margin-left: 16rpx;
 }
 
 .card-meta {
   font-size: 22rpx;
-  color: rgba(255, 255, 255, 0.6);
+  color: #999999;
   margin-bottom: 4rpx;
 }
 
 .card-sales {
   font-size: 22rpx;
-  color: rgba(255, 255, 255, 0.5);
+  color: #bbbbbb;
 }
 
 /* 展开/收起 */
@@ -321,7 +322,7 @@ async function sendMessage() {
 
 .show-more text {
   font-size: 24rpx;
-  color: #00E5FF;
+  color: #1976d2;
   text-decoration: underline;
 }
 
@@ -341,7 +342,7 @@ async function sendMessage() {
   width: 12rpx;
   height: 12rpx;
   border-radius: 50%;
-  background: #00E5FF;
+  background: #1976d2;
   animation: dotBounce 1.4s infinite ease-in-out both;
 }
 
@@ -356,10 +357,11 @@ async function sendMessage() {
 
 /* 输入区域 */
 .input-area {
-  background: rgba(0, 0, 0, 0.3);
+  background: #ffffff;
   padding: 16rpx 20rpx;
   padding-bottom: calc(16rpx + env(safe-area-inset-bottom));
-  border-top: 1rpx solid rgba(255, 255, 255, 0.1);
+  border-top: 1rpx solid #e8e8e8;
+  box-shadow: 0 -2rpx 12rpx rgba(0, 0, 0, 0.04);
 }
 
 .input-form {
@@ -371,22 +373,22 @@ async function sendMessage() {
 .question-input {
   flex: 1;
   padding: 20rpx 28rpx;
-  border: 1rpx solid rgba(255, 255, 255, 0.2);
+  border: 1rpx solid #e0e0e0;
   border-radius: 40rpx;
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  background: #f5f8fb;
+  color: #333333;
   font-size: 28rpx;
 }
 
 .input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: #bbbbbb;
 }
 
 .submit-btn {
   padding: 20rpx 40rpx;
-  background: linear-gradient(135deg, #00E5FF 0%, #0099CC 100%);
+  background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
   border-radius: 40rpx;
-  color: #1a1a2e;
+  color: #ffffff;
   font-size: 28rpx;
   font-weight: bold;
   white-space: nowrap;

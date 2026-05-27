@@ -301,9 +301,9 @@ const _sfc_main = {
           option: mapOption.value
         }),
         d: salesTab.value === "history" ? 1 : "",
-        e: common_vendor.o(($event) => salesTab.value = "history", "c6"),
+        e: common_vendor.o(($event) => salesTab.value = "history", "8d"),
         f: salesTab.value === "live" ? 1 : "",
-        g: common_vendor.o(($event) => salesTab.value = "live", "a8"),
+        g: common_vendor.o(($event) => salesTab.value = "live", "2e"),
         h: salesTab.value === "history"
       }, salesTab.value === "history" ? {
         i: common_vendor.p({

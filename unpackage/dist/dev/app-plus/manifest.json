@@ -75,11 +75,11 @@
     "statusbar": {
       "immersed": "supportedDevice",
       "style": "light",
-      "background": "#1a1a2e"
+      "background": "#1976d2"
     },
     "allowsInlineMediaPlayback": true,
     "safearea": {
-      "background": "#1a1a2e",
+      "background": "#ffffff",
       "bottom": {
         "offset": "auto"
       }
@@ -101,8 +101,8 @@
     "tabBar": {
       "position": "bottom",
       "color": "#999999",
-      "selectedColor": "#00E5FF",
-      "borderStyle": "rgba(0,0,0,0.4)",
+      "selectedColor": "#1976d2",
+      "borderStyle": "rgba(255,255,255,0.4)",
       "blurEffect": "none",
       "fontSize": "10px",
       "iconWidth": "24px",
@@ -114,17 +114,21 @@
           "text": "数据大屏"
         },
         {
+          "pagePath": "pages/ticket/index",
+          "text": "景点门票"
+        },
+        {
           "pagePath": "pages/chat/index",
           "text": "智能助手"
+        },
+        {
+          "pagePath": "pages/profile/index",
+          "text": "我的"
         }
       ],
-      "backgroundColor": "#1a1a2e",
+      "backgroundColor": "#ffffff",
       "selectedIndex": 0,
-      "shown": true,
-      "child": [
-        "lauchwebview"
-      ],
-      "selected": 0
+      "shown": true
     }
   },
   "app-harmony": {
@@ -133,7 +137,7 @@
       "concatenate": true
     },
     "safearea": {
-      "background": "#1a1a2e",
+      "background": "#ffffff",
       "bottom": {
         "offset": "auto"
       }

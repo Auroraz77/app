@@ -63,7 +63,7 @@ onBeforeUnmount(() => {
 
 .chart-title {
   text-align: center;
-  color: #ffffff;
+  color: #333333;
   font-size: 28rpx;
   padding: 12rpx 0;
   font-weight: bold;

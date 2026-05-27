@@ -31,7 +31,7 @@
 }
 .chart-title[data-v-ff2dcc0a] {
   text-align: center;
-  color: #ffffff;
+  color: #333333;
   font-size: 0.875rem;
   padding: 0.375rem 0;
   font-weight: bold;
@@ -49,7 +49,7 @@
 }
 .chart-title[data-v-e331f234] {
   text-align: center;
-  color: #ffffff;
+  color: #333333;
   font-size: 0.875rem;
   padding: 0.375rem 0;
   font-weight: bold;
@@ -67,7 +67,7 @@
 }
 .chart-title[data-v-670ac132] {
   text-align: center;
-  color: gold;
+  color: #1976d2;
   font-size: 0.875rem;
   padding: 0.375rem 0;
   font-weight: bold;
@@ -85,7 +85,7 @@
 }
 .chart-title[data-v-652c9cfc] {
   text-align: center;
-  color: #ffffff;
+  color: #333333;
   font-size: 0.875rem;
   padding: 0.375rem 0;
   font-weight: bold;
@@ -96,13 +96,13 @@
 .attraction-card[data-v-58bb8176] {
   width: 100%;
   box-sizing: border-box;
-  background: linear-gradient(135deg, #1a365d 0%, #2d4a7c 50%, #1e3a5f 100%);
-  border-radius: 0.375rem;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #e1f5fe 100%);
+  border-radius: 0.5rem;
   padding: 0.625rem 0.75rem;
-  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0.125rem 0.5rem rgba(25, 118, 210, 0.1);
   position: relative;
   overflow: hidden;
-  border: 0.03125rem solid rgba(212, 175, 55, 0.3);
+  border: 0.03125rem solid rgba(25, 118, 210, 0.15);
 }
 .card-header[data-v-58bb8176] {
   display: flex;
@@ -111,8 +111,8 @@
   margin-bottom: 0.5rem;
 }
 .city-badge[data-v-58bb8176] {
-  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
-  color: #1a365d;
+  background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
+  color: #ffffff;
   padding: 0.1875rem 0.625rem;
   border-radius: 0.75rem;
   font-size: 0.6875rem;
@@ -120,7 +120,7 @@
   white-space: nowrap;
 }
 .attraction-name[data-v-58bb8176] {
-  color: #ffffff;
+  color: #1a1a1a;
   font-size: 1rem;
   font-weight: bold;
   white-space: nowrap;
@@ -136,7 +136,7 @@
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  color: rgba(212, 175, 55, 0.9);
+  color: #1976d2;
   font-size: 0.6875rem;
   margin-bottom: 0.375rem;
 }
@@ -144,34 +144,34 @@
   font-size: 0.75rem;
 }
 .description-text[data-v-58bb8176] {
-  color: rgba(255, 255, 255, 0.95);
+  color: #333333;
   font-size: 0.75rem;
   line-height: 1.6;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.7);
   padding: 0.375rem 0.5rem;
   border-radius: 0.25rem;
-  border-left: 0.125rem solid rgba(212, 175, 55, 0.5);
+  border-left: 0.125rem solid #1976d2;
 }
 .card-decoration[data-v-58bb8176] {
   position: absolute;
   bottom: 0.375rem;
   right: 0.625rem;
-  opacity: 0.85;
+  opacity: 0.15;
   font-size: 1.875rem;
   z-index: 3;
 }
 .gondola-icon[data-v-58bb8176] {
-  color: #d4af37;
+  color: #1976d2;
 }
 
 
 .dashboard[data-v-a869e244] {
   min-height: 100vh;
-  background: #0F172A;
+  background: linear-gradient(180deg, #e0f2ff 0%, #f5f8fb 30%, #f5f8fb 100%);
 }
 .title[data-v-a869e244] {
   text-align: center;
-  color: #ffffff;
+  color: #1a1a1a;
   font-size: 1.125rem;
   font-weight: bold;
   padding: 0.625rem 0;
@@ -182,14 +182,10 @@
 }
 .module[data-v-a869e244] {
   margin-bottom: 0.75rem;
-}
-
-/* 每个模块的圆角容器背景 */
-.module[data-v-a869e244] {
-  background: rgba(255, 255, 255, 0.03);
+  background: #ffffff;
   border-radius: 0.5rem;
   padding: 0.5rem;
-  border: 0.03125rem solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.06);
 }
 .section[data-v-a869e244] {
   width: 100%;
@@ -208,7 +204,7 @@
 /* Tab 栏 */
 .tab-bar[data-v-a869e244] {
   display: flex;
-  background: rgba(255, 255, 255, 0.06);
+  background: #f0f4f8;
   border-radius: 0.375rem;
   padding: 0.1875rem;
   margin-bottom: 0.5rem;
@@ -216,16 +212,17 @@
 .tab-item[data-v-a869e244] {
   flex: 1;
   text-align: center;
-  color: rgba(255, 255, 255, 0.5);
+  color: #999999;
   font-size: 0.8125rem;
   padding: 0.4375rem 0;
   border-radius: 0.3125rem;
   transition: all 0.3s;
 }
 .tab-item.active[data-v-a869e244] {
-  background: rgba(0, 229, 255, 0.15);
-  color: #00E5FF;
+  background: #ffffff;
+  color: #1976d2;
   font-weight: bold;
+  box-shadow: 0 0.0625rem 0.25rem rgba(0, 0, 0, 0.08);
 }
 .bottom-spacer[data-v-a869e244] {
   height: 3.75rem;

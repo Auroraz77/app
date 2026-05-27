@@ -145,7 +145,7 @@ async function fetchHistorySales() {
         yAxis: {
           type: 'category', data: names,
           axisLine: { show: false }, axisTick: { show: false },
-          axisLabel: { color: 'rgba(200,220,255,0.8)', fontSize: 11 }
+          axisLabel: { color: '#666666', fontSize: 11 }
         },
         series: [{
           name: '销量', type: 'bar', barWidth: 12, data: values,
@@ -160,7 +160,7 @@ async function fetchHistorySales() {
               ]
             }
           },
-          label: { show: true, position: 'right', color: '#00E5FF', fontSize: 11, fontWeight: 'bold', formatter: '{c}' }
+          label: { show: true, position: 'right', color: '#1976d2', fontSize: 11, fontWeight: 'bold', formatter: '{c}' }
         }]
       }
     }
@@ -179,9 +179,9 @@ async function fetchProvince4a5a() {
         legend: {
           type: 'scroll', orient: 'vertical', right: 10, top: 'center',
           itemWidth: 10, itemHeight: 10, itemGap: 10,
-          textStyle: { color: '#fff', fontSize: 10 },
-          pageTextStyle: { color: '#fff' },
-          pageIconColor: '#aaa', pageIconInactiveColor: '#333'
+          textStyle: { color: '#666666', fontSize: 10 },
+          pageTextStyle: { color: '#666666' },
+          pageIconColor: '#aaa', pageIconInactiveColor: '#ddd'
         },
         series: [{
           name: '4A-5A景区数量', type: 'pie',
@@ -207,14 +207,14 @@ async function fetchMapData() {
         tooltip: { trigger: 'item', formatter: function (p) { return p.name + ': ' + (p.value || 0) } },
         visualMap: {
           min: 0, max: maxVal, left: 'left', bottom: 20,
-          text: ['高', '低'], textStyle: { color: 'white', fontSize: 11 },
+          text: ['高', '低'], textStyle: { color: '#666666', fontSize: 11 },
           inRange: { color: ['#e0ffff', '#006edd'] }, show: true
         },
         series: [{
           type: 'map', map: 'china',
-          label: { show: true, color: 'white', fontSize: 8 },
-          itemStyle: { areaColor: '#eee', borderColor: 'rgb(108,105,105)' },
-          emphasis: { label: { color: '#fff' }, itemStyle: { areaColor: '#1591ea' } },
+          label: { show: true, color: '#333333', fontSize: 8 },
+          itemStyle: { areaColor: '#e3f2fd', borderColor: '#b0bec5' },
+          emphasis: { label: { color: '#1a1a1a' }, itemStyle: { areaColor: '#90caf9' } },
           data: result.data
         }]
       }
@@ -240,24 +240,24 @@ async function fetchLiveRanking() {
         grid: { left: '3%', right: '8%', bottom: 20, top: 20, containLabel: true },
         xAxis: {
           type: 'value',
-          axisLabel: { show: true, color: 'white', fontSize: 11, formatter: function (v) { return v >= 1000 ? v / 1000 + 'k' : v } },
-          axisLine: { show: true, lineStyle: { color: 'rgba(255,255,255,0.3)' } },
-          splitLine: { lineStyle: { color: 'rgba(255,255,255,0.1)' } }
+          axisLabel: { show: true, color: '#666666', fontSize: 11, formatter: function (v) { return v >= 1000 ? v / 1000 + 'k' : v } },
+          axisLine: { show: true, lineStyle: { color: '#cccccc' } },
+          splitLine: { lineStyle: { color: '#f0f0f0' } }
         },
         yAxis: {
           type: 'category', data: names,
-          axisLabel: { color: 'white', fontSize: 11 },
+          axisLabel: { color: '#666666', fontSize: 11 },
           axisLine: { show: false }, axisTick: { show: false }
         },
         series: [{
           data: values, type: 'bar', barWidth: '50%',
-          label: { show: true, position: 'right', color: '#00E5FF', fontSize: 11, fontWeight: 'bold' },
+          label: { show: true, position: 'right', color: '#1976d2', fontSize: 11, fontWeight: 'bold' },
           itemStyle: {
             color: {
               type: 'linear', x: 0, y: 0, x2: 1, y2: 0,
               colorStops: [
-                { offset: 0, color: 'rgba(0, 80, 160, 0.6)' },
-                { offset: 1, color: '#00E5FF' }
+                { offset: 0, color: '#42a5f5' },
+                { offset: 1, color: '#1976d2' }
               ]
             },
             borderRadius: [0, 5, 5, 0]
@@ -276,20 +276,20 @@ async function fetchPriceDistribution() {
     if (result.success) {
       const data = result.data.map(function (item) { return [item.xAxis, item.yAxis] })
       priceOption.value = {
-        color: ['#00E5FF'],
+        color: ['#42a5f5'],
         tooltip: { trigger: 'axis', axisPointer: { type: 'shadow', label: { show: true } } },
         grid: { left: '3%', right: '4%', bottom: '3%', top: 30, containLabel: true },
         xAxis: {
           type: 'value',
-          axisLabel: { color: 'white', fontSize: 11 },
-          axisLine: { show: true, lineStyle: { color: 'rgba(255,255,255,0.3)' } },
-          splitLine: { lineStyle: { color: 'rgba(255,255,255,0.1)' } }
+          axisLabel: { color: '#666666', fontSize: 11 },
+          axisLine: { show: true, lineStyle: { color: '#cccccc' } },
+          splitLine: { lineStyle: { color: '#f0f0f0' } }
         },
         yAxis: {
           type: 'value',
-          axisLabel: { color: 'white', fontSize: 11 },
-          axisLine: { show: true, lineStyle: { color: 'rgba(255,255,255,0.3)' } },
-          splitLine: { lineStyle: { color: 'rgba(255,255,255,0.1)' } }
+          axisLabel: { color: '#666666', fontSize: 11 },
+          axisLine: { show: true, lineStyle: { color: '#cccccc' } },
+          splitLine: { lineStyle: { color: '#f0f0f0' } }
         },
         series: [{
           type: 'scatter',
@@ -303,11 +303,11 @@ async function fetchPriceDistribution() {
             color: {
               type: 'linear', x: 0, y: 0, x2: 0, y2: 1,
               colorStops: [
-                { offset: 0, color: 'rgb(19, 173, 255)' },
-                { offset: 1, color: 'rgb(19, 200, 255)' }
+                { offset: 0, color: '#1976d2' },
+                { offset: 1, color: '#42a5f5' }
               ]
             },
-            shadowBlur: 10, shadowColor: 'rgba(19, 173, 255, 0.5)', shadowOffsetY: 5
+            shadowBlur: 10, shadowColor: 'rgba(25, 118, 210, 0.3)', shadowOffsetY: 5
           }
         }]
       }
@@ -332,12 +332,12 @@ async function fetchRandomAttraction() {
 <style scoped>
 .dashboard {
   min-height: 100vh;
-  background: #0F172A;
+  background: linear-gradient(180deg, #e0f2ff 0%, #f5f8fb 30%, #f5f8fb 100%);
 }
 
 .title {
   text-align: center;
-  color: #ffffff;
+  color: #1a1a1a;
   font-size: 36rpx;
   font-weight: bold;
   padding: 20rpx 0;
@@ -350,14 +350,10 @@ async function fetchRandomAttraction() {
 
 .module {
   margin-bottom: 24rpx;
-}
-
-/* 每个模块的圆角容器背景 */
-.module {
-  background: rgba(255, 255, 255, 0.03);
+  background: #ffffff;
   border-radius: 16rpx;
   padding: 16rpx;
-  border: 1rpx solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.06);
 }
 
 .section {
@@ -380,7 +376,7 @@ async function fetchRandomAttraction() {
 /* Tab 栏 */
 .tab-bar {
   display: flex;
-  background: rgba(255, 255, 255, 0.06);
+  background: #f0f4f8;
   border-radius: 12rpx;
   padding: 6rpx;
   margin-bottom: 16rpx;
@@ -389,7 +385,7 @@ async function fetchRandomAttraction() {
 .tab-item {
   flex: 1;
   text-align: center;
-  color: rgba(255, 255, 255, 0.5);
+  color: #999999;
   font-size: 26rpx;
   padding: 14rpx 0;
   border-radius: 10rpx;
@@ -397,9 +393,10 @@ async function fetchRandomAttraction() {
 }
 
 .tab-item.active {
-  background: rgba(0, 229, 255, 0.15);
-  color: #00E5FF;
+  background: #ffffff;
+  color: #1976d2;
   font-weight: bold;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.08);
 }
 
 .bottom-spacer {
