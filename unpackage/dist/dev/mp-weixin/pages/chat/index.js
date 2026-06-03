@@ -6,7 +6,7 @@ const _sfc_main = {
   setup(__props) {
     const messages = common_vendor.ref([
       {
-        text: "您好！我是景点智能助手，可以帮您查询景点信息。请问有什么可以帮您？",
+        text: "您好！我是景点智能助手，可以帮您查询景点信息，也可以帮您记录行程和账单。例如：明天上午 9 点去外滩，今天午餐花了 68 元。",
         isUser: false
       }
     ]);
@@ -20,6 +20,13 @@ const _sfc_main = {
           scrollTarget.value = "msg-bottom";
         });
       });
+    }
+    function isRecordText(text) {
+      return /添加行程|新增行程|记录行程|行程记录|记账|记一笔|账单|消费|花了|支付|付款|支出/.test(text);
+    }
+    function notifyProfileRefresh() {
+      common_vendor.index.setStorageSync("profileNeedsRefresh", "1");
+      common_vendor.index.$emit("profile-data-updated");
     }
     async function sendMessage() {
       const q = question.value.trim();
@@ -47,12 +54,15 @@ const _sfc_main = {
               showAll: false
             });
           } else if (result.type === "knowledge" || result.type === "weather" || result.type === "error") {
-            messages.value.push({ text: result.text || "查询完成", isUser: false });
+            messages.value.push({ text: result.text || (isRecordText(q) ? "记录完成" : "处理完成"), isUser: false });
+          } else if (result.type === "record") {
+            notifyProfileRefresh();
+            messages.value.push({ text: result.text || "记录完成，个人信息页可查看最新内容。", isUser: false });
           } else if (result.csv) {
             let text = result.result || "导出成功";
             messages.value.push({ text, isUser: false });
           } else {
-            messages.value.push({ text: result.result || "查询完成", isUser: false });
+            messages.value.push({ text: result.result || (isRecordText(q) ? "记录完成" : "处理完成"), isUser: false });
           }
         } else {
           messages.value.push({ text: "查询失败：" + result.error, isUser: false });

@@ -827,7 +827,7 @@
   font-weight: 600;
 }
 .bottom-spacer[data-v-201c0da5] {
-  height: 3.75rem;
+  height: 1rem;
 }
 
 /* ===== 账单样式 ===== */
@@ -996,20 +996,4 @@
 .popup-btn.confirm uni-text[data-v-201c0da5] {
   color: #fff;
   font-weight: 600;
-}
-
-/* ===== 悬浮按钮 ===== */
-.fab-btn[data-v-201c0da5] {
-  position: fixed;
-  right: 1.25rem;
-  bottom: 5.625rem;
-  width: 3.125rem;
-  height: 3.125rem;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #1976d2, #0d47a1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0.25rem 0.75rem rgba(25, 118, 210, 0.4);
-  z-index: 100;
 }

@@ -71,7 +71,7 @@
         <input
           class="question-input"
           v-model="question"
-          placeholder="请输入您的问题..."
+          placeholder="可查询景点，也可让我记录行程/账单"
           placeholder-class="input-placeholder"
           :disabled="loading"
           :adjust-position="true"
@@ -102,7 +102,7 @@ import { queryAttraction } from '@/utils/api.js'
  */
 const messages = ref([
   {
-    text: '您好！我是景点智能助手，可以帮您查询景点信息。请问有什么可以帮您？',
+    text: '您好！我是景点智能助手，可以帮您查询景点信息，也可以帮您记录行程和账单。例如：明天上午 9 点去外滩，今天午餐花了 68 元。',
     isUser: false
   }
 ])
@@ -118,6 +118,15 @@ function scrollToBottom() {
       scrollTarget.value = 'msg-bottom'
     })
   })
+}
+
+function isRecordText(text) {
+  return /添加行程|新增行程|记录行程|行程记录|记账|记一笔|账单|消费|花了|支付|付款|支出/.test(text)
+}
+
+function notifyProfileRefresh() {
+  uni.setStorageSync('profileNeedsRefresh', '1')
+  uni.$emit('profile-data-updated')
 }
 
 async function sendMessage() {
@@ -151,9 +160,14 @@ async function sendMessage() {
       }
       // 类型2: 知识 / 天气 / 错误
       else if (result.type === 'knowledge' || result.type === 'weather' || result.type === 'error') {
-        messages.value.push({ text: result.text || '查询完成', isUser: false })
+        messages.value.push({ text: result.text || (isRecordText(q) ? '记录完成' : '处理完成'), isUser: false })
       }
-      // 类型3: CSV 导出结果
+      // 类型3: 助手已写入行程 / 账单
+      else if (result.type === 'record') {
+        notifyProfileRefresh()
+        messages.value.push({ text: result.text || '记录完成，个人信息页可查看最新内容。', isUser: false })
+      }
+      // 类型4: CSV 导出结果
       else if (result.csv) {
         let text = result.result || '导出成功'
         // #ifdef H5
@@ -180,7 +194,7 @@ async function sendMessage() {
       }
       // 兜底
       else {
-        messages.value.push({ text: result.result || '查询完成', isUser: false })
+        messages.value.push({ text: result.result || (isRecordText(q) ? '记录完成' : '处理完成'), isUser: false })
       }
     } else {
       messages.value.push({ text: '查询失败：' + result.error, isUser: false })

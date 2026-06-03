@@ -55,7 +55,7 @@
           </view>
         </view>
 
-        <scroll-view class="content-scroll" scroll-y :style="{ height: contentHeight + 'px' }">
+        <scroll-view class="content-scroll" scroll-y :style="{ height: activeContentHeight + 'px' }">
           <!-- 按日期分组的行程 -->
           <view v-if="filteredTripGroups.length === 0" class="empty-state">
             <uni-icons type="calendar" size="48" color="#ccc" />
@@ -124,7 +124,7 @@
           </view>
         </view>
 
-        <scroll-view class="content-scroll" scroll-y :style="{ height: contentHeight + 'px' }">
+        <scroll-view class="content-scroll" scroll-y :style="{ height: activeContentHeight + 'px' }">
           <view v-if="filteredBillGroups.length === 0" class="empty-state">
             <uni-icons type="wallet" size="48" color="#ccc" />
             <text class="empty-text">暂无账单，点击右上角 + 添加</text>
@@ -216,15 +216,12 @@
       </view>
     </uni-popup>
 
-    <!-- 悬浮按钮 -->
-    <view class="fab-btn" @click="onMapClick">
-      <uni-icons type="map" size="24" color="#ffffff" />
-    </view>
   </view>
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
+import { onShow } from '@dcloudio/uni-app'
 import { getTripPlans, createTripPlan, deleteTripPlan, getBills, createBill, deleteBill } from '@/utils/api.js'
 
 const userInfo = ref({ id: '--', username: '加载中...' })
@@ -268,6 +265,9 @@ watch(showBillForm, (v) => v ? billPopup.value?.open() : billPopup.value?.close(
 // ============ 行程计划计算属性 ============
 
 const tripPlanCount = computed(() => allTripPlans.value.length)
+const activeContentHeight = computed(() => {
+  return activeTab.value === '行程计划' ? contentHeight.value + 90 : contentHeight.value
+})
 
 const filteredTripGroups = computed(() => {
   let plans = allTripPlans.value
@@ -434,24 +434,48 @@ function onSettings() {
   })
 }
 
-function onMapClick() {
-  uni.showToast({ title: '地图导航（待实现）', icon: 'none' })
-}
-
 // ============ 生命周期 ============
 
-onMounted(() => {
+function loadUserInfoFromStorage() {
   try {
     const stored = uni.getStorageSync('user')
     if (stored) userInfo.value = JSON.parse(stored)
   } catch (e) {}
+}
 
-  const sysInfo = uni.getSystemInfoSync()
-  statusBarHeight.value = sysInfo.statusBarHeight || 44
-  contentHeight.value = sysInfo.windowHeight - 420
-
+function refreshProfileData() {
+  loadUserInfoFromStorage()
   loadTripPlans()
   loadBills()
+}
+
+function consumeProfileRefreshFlag() {
+  const needsRefresh = uni.getStorageSync('profileNeedsRefresh')
+  if (needsRefresh) {
+    uni.removeStorageSync('profileNeedsRefresh')
+    refreshProfileData()
+    return true
+  }
+  return false
+}
+
+onMounted(() => {
+  const sysInfo = uni.getSystemInfoSync()
+  statusBarHeight.value = sysInfo.statusBarHeight || 44
+  contentHeight.value = Math.max(320, sysInfo.windowHeight - statusBarHeight.value - 350)
+
+  refreshProfileData()
+  uni.$on('profile-data-updated', refreshProfileData)
+})
+
+onUnmounted(() => {
+  uni.$off('profile-data-updated', refreshProfileData)
+})
+
+onShow(() => {
+  if (!consumeProfileRefreshFlag()) {
+    refreshProfileData()
+  }
 })
 </script>
 
@@ -581,7 +605,7 @@ onMounted(() => {
   border-radius: 16rpx; border: 1rpx dashed #1976d2;
 }
 .add-day-text { font-size: 28rpx; color: #1976d2; font-weight: 600; }
-.bottom-spacer { height: 120rpx; }
+.bottom-spacer { height: 32rpx; }
 
 /* ===== 账单样式 ===== */
 .bill-summary {
@@ -649,12 +673,4 @@ onMounted(() => {
 .popup-btn.confirm { background: #1976d2; }
 .popup-btn.confirm text { color: #fff; font-weight: 600; }
 
-/* ===== 悬浮按钮 ===== */
-.fab-btn {
-  position: fixed; right: 40rpx; bottom: 180rpx;
-  width: 100rpx; height: 100rpx; border-radius: 50%;
-  background: linear-gradient(135deg,#1976d2,#0d47a1);
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 8rpx 24rpx rgba(25,118,210,0.4); z-index: 100;
-}
 </style>
